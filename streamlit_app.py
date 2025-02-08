@@ -14,7 +14,7 @@ if not openai_api_key:
     st.error("🚨 OpenAI API key not found! Set it in Streamlit Cloud's secrets.")
     st.stop()
 
-st.write("✅ OpenAI API key found!")
+st.write(f"✅ OpenAI API Key found: {openai_api_key[:5]}********")
 
 def file_checker(file_path):
     """Loads a Python file, processes it with LangChain, and evaluates the code."""
@@ -44,7 +44,9 @@ def file_checker(file_path):
     st.write(f"📜 Text chunks created: {len(texts)}")
 
     # Initialize OpenAI Embeddings
-    embedder = OpenAIEmbeddings(openai_api_key=openai_api_key)
+    #embedder = OpenAIEmbeddings(openai_api_key=openai_api_key)
+    embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_api_key)
+
 
     # Store vectors in Chroma DB
     docsearch = Chroma.from_documents(texts, embedder)
