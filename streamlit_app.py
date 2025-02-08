@@ -1,10 +1,25 @@
+# import os
+# import streamlit as st
+# from langchain.chains import RetrievalQA
+# from langchain_community.document_loaders import TextLoader
+# from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+# from langchain.text_splitter import CharacterTextSplitter
+# from langchain_community.vectorstores import Chroma
+
 import os
+import sys
+
+# Force LangChain to use Pydantic v1
+os.environ["LANGCHAIN_TRACING_V2"] = "false"
+os.environ["LANGCHAIN_API_KEY"] = "fake-key"  # Just to prevent tracing issues
+
 import streamlit as st
 from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+
 
 # ✅ Debug: Ensure API Key is set up
 st.write("🔍 Checking environment variables...")
@@ -45,7 +60,9 @@ def file_checker(file_path):
 
     # Initialize OpenAI Embeddings
     #embedder = OpenAIEmbeddings(openai_api_key=openai_api_key)
-    embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_api_key)
+    #embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_api_key)
+    embedder = OpenAIEmbeddings(model="text-embedding-ada-002", api_key=openai_api_key)
+
 
 
     # Store vectors in Chroma DB

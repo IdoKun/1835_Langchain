@@ -20,6 +20,7 @@ requests==2.31.0
 pandas==2.2.2
 numpy==1.26.3
 pyarrow==16.1.0
+pydantic==1.10.13  # Force correct Pydantic version
 
 # Optional but helpful debugging tools
 rich==13.7.1
