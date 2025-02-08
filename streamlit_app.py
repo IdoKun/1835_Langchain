@@ -22,14 +22,14 @@ from langchain_community.vectorstores import Chroma
 
 
 # ✅ Debug: Ensure API Key is set up
-st.write("🔍 Checking environment variables...")
+#st.write("🔍 Checking environment variables...")
 
 openai_api_key = st.secrets.get("OPENAI_API_KEY")
 if not openai_api_key:
     st.error("🚨 OpenAI API key not found! Set it in Streamlit Cloud's secrets.")
     st.stop()
 
-st.write(f"✅ OpenAI API Key found: {openai_api_key[:5]}********")
+#st.write(f"✅ OpenAI API Key found: {openai_api_key[:5]}********")
 
 def file_checker(file_path):
     """Loads a Python file, processes it with LangChain, and evaluates the code."""
