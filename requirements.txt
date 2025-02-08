@@ -164,4 +164,6 @@ langchain-core==0.1.17
 langchain-openai==0.0.5
 openai==1.10.0
 chromadb==0.4.22
+pydantic==2.10.6  # Add this line to ensure compatibility
+
 #onnxruntime==1.15.0  # Change from 1.16.3
