@@ -107,14 +107,19 @@
 #         st.error("❌ No answer generated.")
 
 import os
-import sys
 import subprocess
+
+# ✅ Force a clean reinstall of the correct dependencies
+os.system("pip uninstall -y langchain langchain-openai openai pydantic")
+os.system("pip install pydantic==1.10.13 openai==1.10.0 langchain==0.1.4 langchain-openai==0.0.2 --no-cache-dir")
+
 import streamlit as st
 from langchain.chains import RetrievalQA
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+
 
 # ✅ Force LangChain to use Pydantic v1 (Prevents compatibility issues)
 os.environ["LANGCHAIN_TRACING_V2"] = "false"
@@ -167,7 +172,10 @@ def file_checker(file_path):
     st.write("🔍 Initializing OpenAI Embeddings...")
 
     try:
-        embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_api_key, request_timeout=30)
+        embedder = OpenAIEmbeddings(model="text-embedding-ada-002",
+                                    openai_api_key=openai_api_key,
+                                    request_timeout=30
+                                    )
         st.write("✅ OpenAIEmbeddings initialized successfully!")
     except Exception as e:
         st.error(f"🚨 OpenAIEmbeddings failed: {str(e)}")
