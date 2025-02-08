@@ -61,10 +61,17 @@ def file_checker(file_path):
     # Initialize OpenAI Embeddings
     #embedder = OpenAIEmbeddings(openai_api_key=openai_api_key)
     #embedder = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=openai_api_key)
+    #embedder = OpenAIEmbeddings(model="text-embedding-ada-002", api_key=openai_api_key)
+    st.write("🔍 Debugging OpenAIEmbeddings Initialization")
+
+try:
     embedder = OpenAIEmbeddings(model="text-embedding-ada-002", api_key=openai_api_key)
+    st.write("✅ OpenAIEmbeddings initialized successfully!")
+except Exception as e:
+    st.error(f"🚨 OpenAIEmbeddings failed: {str(e)}")
+    st.stop()
 
-
-
+#stop update
     # Store vectors in Chroma DB
     docsearch = Chroma.from_documents(texts, embedder)
 
