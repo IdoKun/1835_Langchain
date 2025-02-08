@@ -1,0 +1,25 @@
+# Core dependencies
+streamlit==1.34.0
+python-dotenv==1.0.1
+
+# LangChain components
+langchain==0.1.4
+langchain-community==0.0.16
+langchain-core==0.1.17
+langchain-openai==0.0.5
+
+# Vector store for embeddings
+chromadb==0.4.22
+
+# OpenAI API
+openai==1.10.0
+
+# Other utilities
+aiohttp==3.9.3
+requests==2.31.0
+pandas==2.2.2
+numpy==1.26.3
+pyarrow==16.1.0
+
+# Optional but helpful debugging tools
+rich==13.7.1
