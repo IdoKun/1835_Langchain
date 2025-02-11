@@ -6,4 +6,11 @@ langchain==0.1.4
 langchain-community==0.0.16
 langchain-core==0.1.17
 langchain-openai==0.0.5
-openai>=1.10.0,<2.0.0
+openai>=1.10.0,<2.0.0  # Ensure compatibility with LangChain
+
+# Vector Database (ChromaDB)
+chromadb==0.4.22  # Force downgrade to an older, compatible version
+pysqlite3-binary==0.5.4  # Ensures updated SQLite for ChromaDB
+
+# Other Dependencies
+pydantic==2.10.6
