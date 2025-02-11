@@ -7,6 +7,12 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 
+import sys
+import pysqlite3
+
+sys.modules["sqlite3"] = pysqlite3
+
+
 def file_checker(file_path):
     try:
         loader = TextLoader(file_path)
