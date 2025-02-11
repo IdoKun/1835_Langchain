@@ -1,29 +1,9 @@
-# streamlit==1.34.0
-# langchain==0.1.4
-# langchain-community==0.0.16
-# langchain-core==0.1.17
-# langchain-openai==0.0.5
-# openai>=1.10.0  # Remove any conflicting older versions
-# chromadb==0.4.22
-# pydantic==2.10.6
-
-
-# Streamlit and dependencies
+# Streamlit
 streamlit==1.34.0
 
-# LangChain packages
+# LangChain and OpenAI dependencies
 langchain==0.1.4
 langchain-community==0.0.16
 langchain-core==0.1.17
 langchain-openai==0.0.5
-
-# OpenAI API
 openai>=1.10.0,<2.0.0
-
-# Vector DB and SQLite Fix
-chromadb==0.4.22
-pysqlite3-binary==0.5.4
-sqlite3  # Explicitly include SQLite
-
-# Additional dependencies
-pydantic==2.10.6
