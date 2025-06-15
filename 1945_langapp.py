@@ -31,7 +31,7 @@ def file_checker(file_path):
     docsearch = Chroma.from_documents(texts, embedder)
 
     qa = RetrievalQA.from_chain_type(
-        llm=ChatOpenAI(model_name="gpt-4-turbo-preview", openai_api_key=openai_api_key),
+        llm=ChatOpenAI(model_name="gpt-4.1-nano-2025-04-14", openai_api_key=openai_api_key),
         chain_type="stuff",
         retriever=docsearch.as_retriever(search_kwargs={"k": 1}),
     )

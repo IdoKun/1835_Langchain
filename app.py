@@ -35,7 +35,7 @@ def file_checker(file): # a path to a file, in our case a text file containing c
     # instantiate a Retrieval Chain from openAI, with our key, chain_type="stuff" means the model 'stuffs' all
     # our text into a single prompt (highly unlikely any of our text files will be too large for this model to handle).
     # We set our model to be the latest GPT-4-Turbo model.
-    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(model_name="gpt-4-turbo-preview",
+    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(model_name="gpt-4.1-nano-2025-04-14",
                                                     openai_api_key=openai_api_key),
                                      chain_type="stuff",
                                      retriever=docsearch.as_retriever(search_kwargs={"k": 1}))
