@@ -10,7 +10,7 @@ openai>=1.10.0,<2.0.0  # Ensure compatibility with LangChain
 
 # Vector Database (ChromaDB)
 chromadb==0.4.22  # Force downgrade to an older, compatible version
-pysqlite3-binary==0.5.4  # Ensures updated SQLite for ChromaDB
+#pysqlite3-binary==0.5.4  # Ensures updated SQLite for ChromaDB
 
 # Other Dependencies
 pydantic==2.10.6
