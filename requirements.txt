@@ -14,3 +14,4 @@ chromadb==0.4.22  # Force downgrade to an older, compatible version
 
 # Other Dependencies
 pydantic==2.10.6
+tiktoken==0.5.1
